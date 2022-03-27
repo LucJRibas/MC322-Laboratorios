@@ -1,9 +1,6 @@
-# Lab01 - Empréstimos em C
+# Lab02 - Java estruturas
 
-## Notebook 1 sobre Empréstimos
+## Notebook sobre estruturas em java
 
-[emprestimo01.ipynb](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab01/notebook/emprestimo01.ipynb)
+[notebook](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab02/notebook/lab02-java-estruturas-ra247231.ipynb)
 
-## Notebook 2 sobre Empréstimos e TAD (opcional)
-
-[emprestimo02-tad.ipynb](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab01/notebook/emprestimo02-tad.ipynb)
