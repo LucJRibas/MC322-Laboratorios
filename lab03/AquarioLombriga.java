@@ -4,12 +4,12 @@ public class AquarioLombriga {
     char lombrigaNoAquario[];
     int posCabeca, posRabo, tamLombriga, tamAquario;
     
-    AquarioLombriga(int tamLombriga, int tamAquario, int posCabeca){
+    AquarioLombriga(int tamAquario, int tamLombriga, int posCabeca){
     	this.tamAquario = tamAquario;
     	this.tamLombriga = tamLombriga;
         this.lombrigaNoAquario = new char[tamAquario];
-        this.posCabeca = posCabeca;
-        this.posRabo = posCabeca + this.tamLombriga - 1;
+        this.posCabeca = posCabeca - 1;
+        this.posRabo = this.posCabeca + this.tamLombriga - 1;
         for (int i = 0; i < this.posCabeca; i++)
             this.lombrigaNoAquario[i] = '#';
         this.lombrigaNoAquario[this.posCabeca] = '0';
@@ -21,9 +21,20 @@ public class AquarioLombriga {
     }
     
     public void crescer() {
+		if (this.posCabeca < this.posRabo) {
+			if (this.posRabo + 1 >= this.tamAquario) return;
+
+			this.lombrigaNoAquario[++this.posRabo] = '#';
+
+		} else {
+			if (this.posRabo <= 0) return;
+			this.lombrigaNoAquario[--this.posRabo] = '@';
+		}
+
     	if (this.posCabeca + this.tamLombriga >= tamAquario) return;
     	this.lombrigaNoAquario[this.posCabeca + this.tamLombriga] = '@';
     	this.tamLombriga++;
+		this.posRabo++;
     }
     
     public void virar() {
@@ -36,20 +47,22 @@ public class AquarioLombriga {
     
     public void mover() {
     	if (this.posCabeca > this.posRabo) {
-    		if (this.posCabeca + 1 == this.tamAquario) {
+    		if (this.posCabeca + 1 >= this.tamAquario) {
     			virar();
     			return;
     		}
     		this.lombrigaNoAquario[this.posCabeca++] = '@';
-    		this.lombrigaNoAquario[this.posCabeca] = '0';
-    		
+			this.lombrigaNoAquario[this.posCabeca] = '0';
+			this.lombrigaNoAquario[this.posRabo++] = '#';
+
     	} else {
-    		if (this.posCabeca == 0) {
+    		if (this.posCabeca <= 0) {
     			virar();
     			return;
     		}
     		this.lombrigaNoAquario[this.posCabeca--] = '@';
-    		this.lombrigaNoAquario[this.posCabeca] = '0';
+			this.lombrigaNoAquario[this.posCabeca] = '0';
+			this.lombrigaNoAquario[this.posRabo--] = '#';
     	}
     	
     }

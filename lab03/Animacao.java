@@ -3,13 +3,13 @@ package mc322.lab03;
 public class Animacao {
 	AquarioLombriga lombNoAq;
 	String acoes;
-	int estado = -1;
+	int estado = -2;
 	
 	Animacao(String strAnimacao){
 		lombNoAq = new AquarioLombriga(
-				Integer.parseInt(strAnimacao.substring(0, 1)),
-				Integer.parseInt(strAnimacao.substring(2, 3)),
-				Integer.parseInt(strAnimacao.substring(4, 5))
+				Integer.parseInt(strAnimacao.substring(0, 2)),
+				Integer.parseInt(strAnimacao.substring(2, 4)),
+				Integer.parseInt(strAnimacao.substring(4, 6))
 		);
 		
 		acoes = strAnimacao.substring(6);
@@ -17,7 +17,11 @@ public class Animacao {
 	}
 	
 	public void passo() {
-		if (estado >= acoes.length()) return; 
+		if (estado >= acoes.length()) return;
+		else if (estado < 0) {
+			estado++;
+			return;
+		}
 		switch (acoes.charAt(estado)) {
 			case 'C':
 				lombNoAq.crescer();
@@ -34,8 +38,8 @@ public class Animacao {
 	
 	
 	public String apresenta() {
-		if (estado == -1) {
-			estado = 0;
+		if (estado == -2) {
+			estado++;
 			return "=====";
 		}
     	return this.lombNoAq.apresenta();
