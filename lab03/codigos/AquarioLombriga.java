@@ -24,15 +24,12 @@ public class AquarioLombriga {
 		if (this.posCabeca < this.posRabo) {
 			if (this.posRabo + 1 >= this.tamAquario) return;
 
-			this.lombrigaNoAquario[++this.posRabo] = '#';
+			this.lombrigaNoAquario[++this.posRabo] = '@';
 
 		} else {
 			if (this.posRabo <= 0) return;
 			this.lombrigaNoAquario[--this.posRabo] = '@';
 		}
-
-    	if (this.posCabeca + this.tamLombriga >= tamAquario) return;
-    	this.lombrigaNoAquario[this.posCabeca + this.tamLombriga] = '@';
     	this.tamLombriga++;
     }
     
