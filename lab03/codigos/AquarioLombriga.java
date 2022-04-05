@@ -7,64 +7,64 @@ public class AquarioLombriga {
     AquarioLombriga(int tamAquario, int tamLombriga, int posCabeca){
     	this.tamAquario = tamAquario;
     	this.tamLombriga = tamLombriga;
-        this.lombrigaNoAquario = new char[tamAquario];
+        lombrigaNoAquario = new char[tamAquario];
         this.posCabeca = posCabeca - 1;
-        this.posRabo = this.posCabeca + this.tamLombriga - 1;
+        posRabo = this.posCabeca + this.tamLombriga - 1;
         for (int i = 0; i < this.posCabeca; i++)
-            this.lombrigaNoAquario[i] = '#';
-        this.lombrigaNoAquario[this.posCabeca] = '0';
-        for (int i = this.posCabeca + 1; i < this.posRabo + 1; i++)
-            this.lombrigaNoAquario[i] = '@';
-        for (int i = this.posRabo + 1; i < this.tamAquario; i++)
-            this.lombrigaNoAquario[i] = '#';
+            lombrigaNoAquario[i] = '#';
+        lombrigaNoAquario[this.posCabeca] = '0';
+        for (int i = this.posCabeca + 1; i < posRabo + 1; i++)
+            lombrigaNoAquario[i] = '@';
+        for (int i = posRabo + 1; i < this.tamAquario; i++)
+            lombrigaNoAquario[i] = '#';
         
     }
     
     public void crescer() {
-		if (this.posCabeca < this.posRabo) {
-			if (this.posRabo + 1 >= this.tamAquario) return;
+		if (posCabeca < posRabo) {
+			if (posRabo + 1 >= tamAquario) return;
 
-			this.lombrigaNoAquario[++this.posRabo] = '@';
+			lombrigaNoAquario[++posRabo] = '@';
 
 		} else {
-			if (this.posRabo <= 0) return;
-			this.lombrigaNoAquario[--this.posRabo] = '@';
+			if (posRabo <= 0) return;
+			lombrigaNoAquario[--posRabo] = '@';
 		}
-    	this.tamLombriga++;
+    	tamLombriga++;
     }
     
     public void virar() {
-    	this.lombrigaNoAquario[this.posRabo] = '0';
-    	this.lombrigaNoAquario[this.posCabeca] = '@';
-    	int temp = this.posCabeca;
-    	this.posCabeca = this.posRabo;
-    	this.posRabo = temp;
+    	lombrigaNoAquario[posRabo] = '0';
+    	lombrigaNoAquario[posCabeca] = '@';
+    	int temp = posCabeca;
+    	posCabeca = posRabo;
+    	posRabo = temp;
     }
     
     public void mover() {
-    	if (this.posCabeca > this.posRabo) {
-    		if (this.posCabeca + 1 >= this.tamAquario) {
+    	if (posCabeca > posRabo) {
+    		if (posCabeca + 1 >= tamAquario) {
     			virar();
     			return;
     		}
-    		this.lombrigaNoAquario[this.posCabeca++] = '@';
-			this.lombrigaNoAquario[this.posCabeca] = '0';
-			this.lombrigaNoAquario[this.posRabo++] = '#';
+    		lombrigaNoAquario[posCabeca++] = '@';
+			lombrigaNoAquario[posCabeca] = '0';
+			lombrigaNoAquario[posRabo++] = '#';
 
     	} else {
-    		if (this.posCabeca <= 0) {
+    		if (posCabeca <= 0) {
     			virar();
     			return;
     		}
-    		this.lombrigaNoAquario[this.posCabeca--] = '@';
-			this.lombrigaNoAquario[this.posCabeca] = '0';
-			this.lombrigaNoAquario[this.posRabo--] = '#';
+    		lombrigaNoAquario[posCabeca--] = '@';
+			lombrigaNoAquario[posCabeca] = '0';
+			lombrigaNoAquario[posRabo--] = '#';
     	}
     	
     }
     
     public String apresenta() {
-    	return new String(this.lombrigaNoAquario);
+    	return new String(lombrigaNoAquario);
     }
     
     
