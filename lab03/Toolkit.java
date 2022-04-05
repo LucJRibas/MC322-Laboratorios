@@ -8,7 +8,8 @@ import java.io.PrintWriter;
 import java.util.Vector;
 
 public class Toolkit {
-   public static String DIRETORIO = Toolkit.class.getResource(".").getPath() + "/";
+   public static String DIRETORIO = System.getProperty("user.dir") +
+           "/src/mc322/lab03/";
    
    private static Toolkit tk;
    

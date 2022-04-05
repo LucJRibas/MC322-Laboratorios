@@ -34,7 +34,6 @@ public class AquarioLombriga {
     	if (this.posCabeca + this.tamLombriga >= tamAquario) return;
     	this.lombrigaNoAquario[this.posCabeca + this.tamLombriga] = '@';
     	this.tamLombriga++;
-		this.posRabo++;
     }
     
     public void virar() {
