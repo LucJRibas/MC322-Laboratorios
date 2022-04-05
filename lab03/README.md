@@ -1,9 +1,6 @@
 # Lab03 - Lombriga no Aquário
 
-## Arquivo com a classe LombrigaAquário
+## Arquivos Java sobre Lombriga no Aquário
 
-[Lombriga Aquario](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab03/codigos/AquarioLombriga.java)
+[arquivos](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab03/src/pt/c02oo/c02classe/s03lombriga)
 
-## Arquivo com a classe Animacao
-
-[Animacao](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab03/codigos/Animacao.java)

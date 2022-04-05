@@ -1,6 +1,6 @@
-# Lab02 - Java estruturas
+# Lab02 - Do C para o Java
 
-## Notebook sobre estruturas em java
+## Notebook sobre Java Estruturas
 
 [notebook](https://github.com/LucJRibas/MC322-Laboratorios/blob/main/lab02/notebook/lab02-java-estruturas-ra247231.ipynb)
 
