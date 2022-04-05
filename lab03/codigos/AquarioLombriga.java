@@ -2,17 +2,16 @@ package mc322.lab03;
 
 public class AquarioLombriga {
     char lombrigaNoAquario[];
-    int posCabeca, posRabo, tamLombriga, tamAquario;
+    int posCabeca, posRabo, tamAquario, direction = 1;
     
     AquarioLombriga(int tamAquario, int tamLombriga, int posCabeca){
     	this.tamAquario = tamAquario;
-    	this.tamLombriga = tamLombriga;
         lombrigaNoAquario = new char[tamAquario];
         this.posCabeca = posCabeca - 1;
-        posRabo = this.posCabeca + this.tamLombriga - 1;
+        posRabo = this.posCabeca + tamLombriga - 1;
         for (int i = 0; i < this.posCabeca; i++)
             lombrigaNoAquario[i] = '#';
-        lombrigaNoAquario[this.posCabeca] = '0';
+        lombrigaNoAquario[this.posCabeca] = 'O';
         for (int i = this.posCabeca + 1; i < posRabo + 1; i++)
             lombrigaNoAquario[i] = '@';
         for (int i = posRabo + 1; i < this.tamAquario; i++)
@@ -21,7 +20,7 @@ public class AquarioLombriga {
     }
     
     public void crescer() {
-		if (posCabeca < posRabo) {
+		if (direction == 1) {
 			if (posRabo + 1 >= tamAquario) return;
 
 			lombrigaNoAquario[++posRabo] = '@';
@@ -30,25 +29,25 @@ public class AquarioLombriga {
 			if (posRabo <= 0) return;
 			lombrigaNoAquario[--posRabo] = '@';
 		}
-    	tamLombriga++;
     }
     
     public void virar() {
-    	lombrigaNoAquario[posRabo] = '0';
     	lombrigaNoAquario[posCabeca] = '@';
+    	lombrigaNoAquario[posRabo] = 'O';
     	int temp = posCabeca;
     	posCabeca = posRabo;
     	posRabo = temp;
+    	direction = direction == 1 ? -1: 1;
     }
     
     public void mover() {
-    	if (posCabeca > posRabo) {
+    	if (direction == -1) {
     		if (posCabeca + 1 >= tamAquario) {
     			virar();
     			return;
     		}
     		lombrigaNoAquario[posCabeca++] = '@';
-			lombrigaNoAquario[posCabeca] = '0';
+			lombrigaNoAquario[posCabeca] = 'O';
 			lombrigaNoAquario[posRabo++] = '#';
 
     	} else {
@@ -57,7 +56,7 @@ public class AquarioLombriga {
     			return;
     		}
     		lombrigaNoAquario[posCabeca--] = '@';
-			lombrigaNoAquario[posCabeca] = '0';
+			lombrigaNoAquario[posCabeca] = 'O';
 			lombrigaNoAquario[posRabo--] = '#';
     	}
     	
