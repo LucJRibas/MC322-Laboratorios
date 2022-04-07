@@ -15,8 +15,7 @@ public class AppRestaUm {
           tk.writeBoard("source: " + commands[l].substring(0, 2) + ";target: "+ commands[l].substring(3), tabuleiro.apresenta());
 
       }
-//         System.out.println(commands[l]);
-      
+
       tk.stop();
    }
 

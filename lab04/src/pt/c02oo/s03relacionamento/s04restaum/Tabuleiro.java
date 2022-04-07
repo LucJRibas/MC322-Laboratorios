@@ -32,7 +32,7 @@ public class Tabuleiro {
 		j1 = comando.charAt(3) - 'a';
 		i1 = comando.charAt(4) - '1';
 		
-		if (tabuleiro[i0][j0].podeMover(i1, j1, this)) return;
+		if (!tabuleiro[i0][j0].podeMover(i1, j1, this)) return;
 				
 		Peca temp = tabuleiro[i0][j0]; 
 		tabuleiro[i1][j1].mudaPosicao(i0, j0);
@@ -50,13 +50,6 @@ public class Tabuleiro {
 			}
 		}
 		return tab;
-	}
-	
-	public static void main(String[] args) {
-		Tabuleiro t = new Tabuleiro();
-		//f4:d4
-		t.executaComando("f4:d4");
-//		t.apresenta();
 	}
 
 }
