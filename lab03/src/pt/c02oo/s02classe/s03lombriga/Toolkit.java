@@ -1,4 +1,4 @@
-package mc322.lab03;
+package pt.c02oo.s02classe.s03lombriga;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ import java.util.Vector;
 
 public class Toolkit {
    public static String DIRETORIO = System.getProperty("user.dir") +
-           "/src/mc322/lab03/";
+		                            "/src/pt/c02oo/s02classe/s03lombriga/";
    
    private static Toolkit tk;
    
