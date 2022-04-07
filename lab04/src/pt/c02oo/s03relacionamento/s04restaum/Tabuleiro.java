@@ -39,7 +39,6 @@ public class Tabuleiro {
 		tabuleiro[i0][j0] = tabuleiro[i1][j1];
 		tabuleiro[i1][j1] = temp;
 		tabuleiro[(i0 + i1)/2][(j0 + j1)/2].setTipo(TiposPeca.MORTA);
-		apresenta();
 	}
 	
 	public char[][] apresenta() {
