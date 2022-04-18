@@ -3,8 +3,8 @@ package pt.c02oo.s03relacionamento.s04restaum;
 import static java.lang.Math.abs;
 
 public class Peca {
-	int i, j;
-	TiposPeca tipo;
+	private int i, j;
+	private TiposPeca tipo;
 	
 	Peca(int i,int j,TiposPeca tipo){
 		this.i = i;
